@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<h1> this is loop page</h1>
+<ul>
+{% for items in subjects %}
+<li id=""loop-tags>{{items}}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

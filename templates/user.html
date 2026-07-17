@@ -1,0 +1,22 @@
+{% extends "index.html" %} 
+
+{% block content %}
+
+<h1>This is userpage</h1>
+
+<h2> Name: {{name}}</h2>
+<h2> Position: {{position}}</h2>
+
+
+{% if marks >=  50 %}
+
+<p>Status : Pass</p>
+
+{% else %}
+<p> status : fail</p>
+{% endif %}
+
+<img src="{{url_for('static',filename='image/Spiderman Wallpaper 4k for iPhone.jpg')}}" alt="">
+
+
+{% endblock %}
