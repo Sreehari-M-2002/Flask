@@ -1,0 +1,29 @@
+{% extends 'index.html %}
+
+{% block content %}
+
+<h2>Thid is students sheet</h2>
+
+<form action="" method="POST">
+   <div>
+    <label for="">name</label>
+    <input type="text" name="name">
+
+    <label for="">description</label>
+    <input type="text" name="desc">
+   </div>
+   <button type="submit">Save</button>
+</form>
+
+<h1>this is students list</h1>
+
+<div>
+    <ul>
+        {% for items in students %}
+         <li>{{items.name}}</li>
+         <li>{{items.desc}}</li>
+         {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
