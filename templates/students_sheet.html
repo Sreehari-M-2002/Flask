@@ -1,29 +1,32 @@
-{% extends 'index.html %}
+{% extends 'index.html' %}
 
 {% block content %}
 
-<h2>Thid is students sheet</h2>
+<h2>This is students sheet</h2>
 
 <form action="" method="POST">
    <div>
-    <label for="">name</label>
-    <input type="text" name="name">
+      <label>Name</label>
+      <input type="text" name="name">
 
-    <label for="">description</label>
-    <input type="text" name="desc">
+      <label>Description</label>
+      <input type="text" name="desc">
    </div>
    <button type="submit">Save</button>
 </form>
 
-<h1>this is students list</h1>
+<h1>This is students list</h1>
 
 <div>
     <ul>
-        {% for items in students %}
-         <li>{{items.name}}</li>
-         <li>{{items.desc}}</li>
-         {% endfor %}
-    </ul>
+    {% for items in students %}
+        <li>{{ items.name }}</li>
+
+        <a href="{{ url_for('remove_student', id=items.id) }}">Delete</a>
+        <a href="{{ url_for('update_student', id=items.id) }}">Update</a>
+        <a href="{{ url_for('full_detail', id=items.id) }}">More Details</a>
+    {% endfor %}
+   </ul>
 </div>
 
 {% endblock %}

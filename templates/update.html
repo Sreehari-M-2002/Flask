@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<h2>This is update page</h2>
+
+<form action="" method="POST">
+   <div>
+      <label>Name</label>
+      <input type="text" name="name" value="{{student.name}}">
+
+      <label>Description</label>
+      <input type="text" name="desc" value="{{student.desc}}">
+   </div>
+   <button type="submit">Save</button>
+</form>
+
+
+
+{% endblock %}
