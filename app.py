@@ -38,33 +38,6 @@ def succes():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @app.route('/')  #end point
 def home():      #function
     return render_template('home.html')
