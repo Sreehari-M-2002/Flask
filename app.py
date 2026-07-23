@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request,url_for,redirect, session
 from models import db,Student, User
 from werkzeug.security import generate_password_hash, check_password_hash
+from forms import RegistartionForm
 
 
 app = Flask(__name__)
@@ -11,6 +12,58 @@ app.config['SECRET_KEY'] = 'authenticationkey'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
+
+
+#<--------  _____             _____          _____  __   __        ------------->
+#<--------  |__   |      /\   |____  |/ ___  |__   |  | |__| |\/|  ------------->
+#<--------  |     |____ /--\  _____| |\      |     |__| | \  |  |  ------------->
+#<--------                                                         ------------->
+
+ 
+@app.route('/register', methods =['GET', 'POST'])
+def register():
+
+    form = RegistartionForm()
+    if form.validate_on_submit():
+        print(form.username.data)
+        return redirect(url_for('success'))
+
+    return render_template('register.html', form=form)
+
+@app.route('/success')
+def succes():
+    return render_template('success.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @app.route('/')  #end point
 def home():      #function
